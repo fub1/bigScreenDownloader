@@ -3,10 +3,12 @@ from rest_framework import serializers
 from clients.models import Client
 from distributions.models import Apk
 
+
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
-        fields = ['id', 'identifier', 'client_android_api']
+        fields = ['id', 'identifier', 'client_android_api', 'webview_version']
+
 
 class ApkSerializer(serializers.ModelSerializer):
     apk_download_url = serializers.SerializerMethodField()

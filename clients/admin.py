@@ -4,8 +4,8 @@ from .models import Client, ClientLog
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ['identifier','client_android_api', 'created_at', 'is_deleted', ]
-    readonly_fields = ['identifier', 'client_android_api', 'created_at',  'client_android_api']
+    list_display = ['identifier','client_android_api', 'webview_version', 'created_at', 'is_deleted', ]
+    readonly_fields = ['identifier', 'client_android_api', 'created_at', 'webview_version']
     actions = ['soft_delete']
 
     def soft_delete(self, request, queryset):

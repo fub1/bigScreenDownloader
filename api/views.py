@@ -11,7 +11,9 @@ class ClientApiEndpoint(APIView):
     def post(self, request, *args, **kwargs):
         identifier = request.data.get('identifier')
         android_api = request.data.get('android_api')
-        client_ip = request.META.get('REMOTE_ADDR', '')
+        #client_ip = request.META.get('REMOTE_ADDR', '')
+        client_ip = request.META.get('HTTP_X_FORWARDED_FOR', '')
+        #） request.META.get('REMOTE_ADDR'))
         webview_version = request.data.get('webview_version')
 
         response_data = {

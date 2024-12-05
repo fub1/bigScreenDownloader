@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-@)iq$^p3rbw-(m
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+USE_X_FORWARDED_HOST = True
 
 # Application definition
 
@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+USE_X_FORWARDED_HOST = True
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
